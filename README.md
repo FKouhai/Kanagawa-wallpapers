@@ -4,8 +4,31 @@ This is a collection of wallpapers I recolored to match the [Kanagawa colorschem
 
 ## Preview
 
-| Column1                             | Column2                               |
+| Kanagawa Wave                             | Kanagawa Dragon                               |
 | ----------------------------------- | ------------------------------------- |
-| ![](wallpapers/landscape/e7741.png) | ![](./wallpapers/landscape/5d526.jpg) |
-| ![](wallpapers/landscape/28cf1.jpg) | ![](./wallpapers/landscape/28614.png) |
-| ![](wallpapers/landscape/2b88a.jpg) | ![](./wallpapers/landscape/3895e.jpg) |
+| ![](./kanagawa-wave/landscape/e7741.png) | ![](./kanagawa-dragon/5d526.jpg) |
+| ![](./kanagawa-wave/landscape/28cf1.jpg) | ![](./kanagawa-dragon/28614.png) |
+| ![](./kanagawa-wave/landscape/2b88a.jpg) | ![](./kanagawa-dragon/3895e.jpg) |
+
+In order to use the flake of this repo:
+```nix
+{
+    inputs = {
+    --- snip ---
+        wallpapers = {
+            url = "github:FKouhai/Kanagawa-wallpapers"
+        };
+    --- snip ---
+    };
+    outputs = {
+        self,
+        --- snip ---
+        wallpapers,
+        --- snip ---
+    }@ inputs;
+    # then either in the flake or in your configuration.nix/home.nix set the environment.systemPackages to: wallpapers.packages.x86_64-linux.default
+    # and set the wallpaper with ${wallpaper}/kanagawa-dragon/wallpaper_name
+    # or set the wallpaper with ${wallpaper}/kanagawa-wave/wallpaper_type/wallpaper_name
+}
+```
+For a better example please refer to this [flake](https://github.com/FKouhai/nix-dots/blob/main/flake.nix).
