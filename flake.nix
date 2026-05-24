@@ -32,6 +32,8 @@
               mkdir $out/share/wallpapers/kanagawa-wave
               cp -r $src/kanagawa-wave/ $out/share/wallpapers/
               cp -r $src/kanagawa-dragon/ $out/share/wallpapers/
+              cp -r $src/kanoxo-wave/ $out/share/wallpapers/
+              cp -r $src/kanoxo-dragon/ $out/share/wallpapers/
             '';
 
             meta.mainProgram = "${pname}";
